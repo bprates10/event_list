@@ -1,0 +1,5 @@
+@layout('layouts.main')
+@section('content')
+<h1 class="title is-4">Novo Evento</h1>
+@!component("event.form", action = route("events.store"), method = "POST", event = event, csrfFields = csrfField())
+@endsection
