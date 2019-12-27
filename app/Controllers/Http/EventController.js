@@ -31,6 +31,12 @@ class EventController {
     await event.save();
     return response.route("events.index");
   }
+
+  async destroy({ params, response }) {
+    const event = await Event.find(params.id);
+    await event.delete();
+    return response.route("events.index");
+  }
 }
 
 module.exports = EventController;
